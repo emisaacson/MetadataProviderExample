@@ -1,0 +1,18 @@
+﻿@model DateTime?
+@{ 
+    bool IsWorking = false;
+
+    if (ViewData.ModelMetadata.AdditionalValues.ContainsKey("DidItWork"))
+    {
+        IsWorking = (bool)ViewData.ModelMetadata.AdditionalValues["DidItWork"];
+    }
+}
+
+@if (IsWorking)
+{
+    <text>It Works</text>
+}
+else
+{
+    <text>It Does Not Work</text>
+}
